@@ -23,39 +23,50 @@ prevenção e automação dessa área.</p>
 </ul>
 
 <p align="center"> Montando o projeto com essas peças, é possível chegar nesse resultado: </p>
-<img src="https://github.com/raigumieri/Sprint3_EDGE/assets/127215645/6a152561-8539-43f1-b5e4-0d505cc2a248">
-
-<br>
-
-<h2 align="center"> Análise dos Componentes </h2>
-<p align="justify"> Iniciaremos a explicação com a Placa de Ensaio, peça fundamental neste projeto. É nela que acomodaremos os demais componentes, assegurando o correto funcionamento do projeto. </p>
-<p align="justify"> O ESP32 desempenha um papel crucial neste projeto ao estabelecer a conexão com a internet, possibilitando a visualização dos valores coletados pelos sensores na nuvem. Além disso, é responsável por coordenar o funcionamento do sensor de umidade e temperatura DHT22 (ou DHT11), bem como do Display LCD I2C. Por meio do ESP32, os dados coletados tornam-se acessíveis através da nuvem. Isso significa que, contanto que haja conexão com a internet, é possível acessar o projeto de qualquer região do mundo. </p>
-<p align="justify"> Quanto ao sensor, o DHT22 é empregado para medir tanto a temperatura quanto a umidade. No entanto, no projeto físico, há também a opção do DHT11, que realiza as mesmas medições. Em resumo, independentemente da escolha entre DHT22 e DHT11, ambos proporcionarão resultados idênticos. </p>
-<p align="justify"> O Display LCD I2C desempenha um papel crucial na transmissão de informações para o usuário. Através dele, é possível analisar o nível de umidade (em %), a temperatura e receber um alerta de enchente caso os valores atinjam níveis elevados. Sua interface intuitiva proporciona uma experiência de usuário eficaz na monitorização dos dados coletados. </p>
-
-<br>
-
-<h2 align="center"> Montagem do Código </h2>
-<p> Após a conclusão da montagem do projeto, partiremos para o desenvolvimento do código. Sinta-se à vontade para acessar o código disponível neste repositório. No entanto, observe que será necessário efetuar algumas alterações nos tópicos marcados no código para estabelecer a conexão com a nuvem e visualizar os dados fornecidos pelo sensor DHT22. (Linhas 9, 10, 11, 12 e 13) </p>
-
 <div align="center">
-  <img src="https://github.com/raigumieri/Sprint3_EDGE/assets/127215645/3915fb3c-ed1f-42b6-9108-b79fdefaa670">
+<img src="https://github.com/limas0209/Global-Solution---2---Semestre/assets/127214958/fed1ae08-c5bf-47d2-bade-0ab135d8b944" alt="Construção do projeto">
 </div>
 
 <br>
 
-<p align="justify"> Após realizar a alteração mencionada, é necessário configurar as linhas de conexão com a internet. Para isso, siga as instruções no código e insira o nome e a senha da sua rede Wi-Fi nas posições indicadas. Isso possibilitará que o ESP32 se conecte à rede e envie os dados do sensor para a nuvem. (Linhas 16 e 17) </p>
+<h2 align="center"> Análise dos Componentes :wrench: </h2>
+<p align="justify"> Iniciaremos a explicação com a Placa de Ensaio, peça fundamental neste projeto. É nela que acomodaremos o resistor, LED e o BUZZER, assegurando o correto funcionamento do projeto. </p>
+<p align="justify"> O ESP32 desempenha um papel crucial neste projeto ao estabelecer a conexão com a internet. Além disso, é responsável por coordenar o funcionamento do Display LCD 20x4 (I2C). Por meio do ESP32, os dados coletados tornam-se acessíveis através da nuvem. Isso significa que, contanto que haja conexão com a internet, é possível acessar o projeto de qualquer região do mundo. </p>
+<p align="justify"> O Display LCD 20x4 (I2C) desempenha um papel crucial na transmissão de informações para o usuário. Através dele, é possível identificar o número do paciente e o consultório no qual ele deve se dirigir. </p>
 
-<div align="center">
-  <img src="https://github.com/raigumieri/Sprint3_EDGE/assets/127215645/3b954812-f646-4271-ad97-8d7bb09cd7ad">
+<br>
+
+<h2 align="center"> Montagem do Código :bomb: </h2>
+<p> Após a montagem, devemos partir para o código, que estará disponível nesse repositório. </p>
+<p> Devemos começar com as importações das bibliotecas.</p>
+<div>
+  <img src="https://github.com/limas0209/Global-Solution---2---Semestre/assets/127214958/17c17d3d-3a24-40a5-b55b-bac6e0ffe0d0">
+</div>
+<br>
+<div>
+  <img src="https://github.com/limas0209/Global-Solution---2---Semestre/assets/127214958/141d9c96-904b-4aac-83ab-bd62444e14f9">
 </div>
 
 <br>
 
-<p align="justify"> Neste caso estamos usando o nome da rede “Wokwi-GUEST”, porque o site está fornecendo essa rede para ser feito os testes necessários, garantindo o funcionamento do ESP32 ao enviar os dados na nuvem. Após realizar essas modificações, execute o código e aguarde a mensagem indicando que o ESP32 está tentando se conectar à rede. Isso confirma que as configurações foram feitas corretamente e o dispositivo está buscando ativamente a conexão com a rede especificada. </p>
+<p> :warning: Note que as bibliotecas "WiFi.h" e "Wire.h" não serão possiveis de instalar no site, porém seu funcionamento continua normal. :warning: </p>
+<hr>
+
+<br>
+
+
+<img src="https://github.com/limas0209/Global-Solution---2---Semestre/assets/127214958/99d4c40e-851e-418f-a089-a0687b3eb582">
+<p>-Em seguida é necessário definir os tópicos que enviarão as informações para a nuvem (Linhas 7,8,9 e 10)</p>
+<p>-Definimos o pino em que o LED e o BUZZER estão conectados (Linhas 12 e 14) </p>
+<p>-Criamos duas variasveis chamadas "pacientes" e "consultorio" e atribuimos o valor 0 e 4 respectivamente. (Linhas 16 e 17)</p>
+<p>-Por fim, é necessário também configurar as linhas de conexão com a internet. Para isso, siga as instruções no código e insira o nome e a senha da sua rede Wi-Fi nas posições indicadas. Isso possibilitará que o ESP32 se conecte à rede e envie os dados para a nuvem.</p>
+
+<br>
+
+<p align="justify"> Neste caso estamos usando o nome da rede “Wokwi-GUEST”, porque o site está fornecendo essa rede para ser feito os testes necessários, garantindo o funcionamento do ESP32 ao enviar os dados na nuvem. Após realizar essas modificações, verifique o restante do código, execute e aguarde a mensagem indicando que o ESP32 está tentando se conectar à rede. Isso confirma que as configurações foram feitas corretamente e o dispositivo está buscando ativamente a conexão com a rede especificada. </p>
 
 <div align="center">
-  <img src="https://github.com/raigumieri/Sprint3_EDGE/assets/127215645/3b1c6151-8b80-4205-9149-63f7a7e9b3be">
+  <img src="https://github.com/limas0209/Global-Solution---2---Semestre/assets/127214958/521e2a47-55fa-4269-8c94-95fbd79d82b2">
 </div>
 
 <br>
@@ -71,48 +82,61 @@ prevenção e automação dessa área.</p>
 <p align="center"> Após a conexão ser feita, vai aparecer a seguinte informação: </p>
 
 <div align="center">
-  <img src="https://github.com/raigumieri/Sprint3_EDGE/assets/127215645/aa4f816f-e963-405c-a923-18681dcf2265">
+  <img src="https://github.com/limas0209/Global-Solution---2---Semestre/assets/127214958/4106e6a4-8ed8-4604-a33f-f8576c2c33ff">
 </div>
 
 <br>
 
-<p align="justify"> Após esse procedimento, os valores de temperatura e umidade serão adquiridos pelo sensor DHT22 e serão exibidos tanto no Monitor Serial quanto no Display LCD I2C: </p>
+<p>Antes de iniciar o programa vale lembrar que no "Void loop" do código acrescentamos uma somatória na variavel "pacientes" e "consultorio"</p>
 
 <div align="center">
-  <img src="https://github.com/raigumieri/Sprint3_EDGE/assets/127215645/2c742afb-ad54-4e2c-9d7b-dca568c88a82">
+  <img src="https://github.com/limas0209/Global-Solution---2---Semestre/assets/127214958/691af268-8115-4a6f-b2d8-d638cfb0ecaa"
 </div>
+
+<br>
+  
+<p align="center"> Após esse procedimento, o número do paciente e o consultório que ele deve se dirigir vão aparecer no Display LCD 20x4 (I2C): </p>
 
 <br>
 
 <div align="center">
-  <img src="https://github.com/raigumieri/Sprint3_EDGE/assets/127215645/3c42cb94-3b94-46e0-a161-84b9d4e0aca6">
+  <img src="https://github.com/limas0209/Global-Solution---2---Semestre/assets/127214958/dcfeac55-2c5f-4050-a192-7bc3459c7fcd">
+</div>
+
+<p>Junto com o Display LCD um alerta sonoro e visual serão emitidos no programa</p>
+
+<br>
+
+<div align="center">
+  <img src="https://github.com/limas0209/Global-Solution---2---Semestre/assets/127214958/f39e8150-7832-4a58-b3e8-315cc49ef0b3">
 </div>
 
 <br>
 
-<h2 align="center"> Acessando os Dados na Rede </h2>
-<p align="justify"> Agora que o projeto está pronto e operacional, é crucial testar se os valores estão sendo enviados pela rede. Para isso, acesse o Google Colab e utilize o código disponibilizado neste repositório, especificamente o Paho MQTT. Essa ferramenta é fundamental para estabelecer a comunicação direta com o broker. </p>
-<p> Primeiro faça a instalação do Paho MQTT </p>
+<p>No código colocamos a função "If()" e passamos o seguinte parâmetro: </p>
 
 <div align="center">
-  <img src="https://github.com/raigumieri/Sprint3_EDGE/assets/127215645/a299202b-d004-42aa-9f11-8dfc7e0e7bb9">
+  <img src="https://github.com/limas0209/Global-Solution---2---Semestre/assets/127214958/9b4ac998-ceca-4b68-be6e-09a5033200a7">
 </div>
 
 <br>
 
-<p> Em seguida, realize as modificações nos tópicos conforme as instruções no código do projeto. Certifique-se de ajustá-los de acordo com as especificações fornecidas e, posteriormente, execute o código no Google Colab para garantir o correto envio e recebimento dos valores na rede. </p>
+<p>Isso significa que quando o número do paciente for igual a 10 e o número do consultório for igual a 14, o loop vai encerrar através da função "while(1)" que trava o ESP32 finalizando sua ação. Para voltar o loop novamente é necessário apertar o botão reset do ESP32</p>
 
 <div align="center">
-  <img src="https://github.com/raigumieri/Sprint3_EDGE/assets/127215645/4a345aa9-3a87-40b1-a0dd-3ebd7d28720b">
-</div>
-
-<br>
-
-<p> Após executar o código, os valores de temperatura e umidade serão exibidos, semelhantemente ao que é mostrado no Monitor Serial e no Display LCD I2C. </p>
-
-<div align="center">
-  <img src="https://github.com/raigumieri/Sprint3_EDGE/assets/127215645/3dfa4131-2684-4d8c-8e41-d1dee3dea62a">
+  <img src="https://github.com/limas0209/Global-Solution---2---Semestre/assets/127214958/b70c8a61-a7b3-44a0-adfd-a6fc53ac4511">
 </div>
 
 <h2 align="center"> Considerações Finais 📘 </h2>
-<p align="center"> Diante de todos esses passos, podemos afirmar que o projeto está concluído. Se todos os procedimentos foram seguidos corretamente, será possível verificar que o projeto está funcionando conforme o esperado. Agradecemos pela atenção e pelo esforço ao acompanhar essas etapas! </p>
+<p align="center"> Diante de todos esses passos, podemos afirmar que o projeto está concluído. Se todos os procedimentos foram seguidos corretamente, será possível verificar que o projeto está funcionando conforme o esperado, lembrando que o intuito do projeto é simular o sistema de notificação e fila de espera em hospitais, a ideia é que essas informações estajam disponiveis não só no display do hospital, mas também no aplicativo. Agradecemos pela atenção e pelo esforço ao acompanhar essas etapas! </p>
+<hr>
+<br>
+
+<h2 align="center">Autores :muscle:</h2>
+<h3>Henrique Lima - RM 551528</h3> 
+https://www.linkedin.com/in/henrique-lima-463686277/
+/
+https://github.com/limas0209"
+
+<h3>Guilherme Fazito - RM 550539</h3>
+https://github.com/GuilhermeFazito
