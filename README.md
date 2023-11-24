@@ -55,11 +55,27 @@ prevenção e automação dessa área.</p>
 <br>
 
 
-<img src="https://github.com/limas0209/Global-Solution---2---Semestre/assets/127214958/99d4c40e-851e-418f-a089-a0687b3eb582">
-<p>-Em seguida é necessário definir os tópicos que enviarão as informações para a nuvem (Linhas 7,8,9 e 10)</p>
-<p>-Definimos o pino em que o LED e o BUZZER estão conectados (Linhas 12 e 14) </p>
-<p>-Criamos duas variasveis chamadas "pacientes" e "consultorio" e atribuimos o valor 0 e 4 respectivamente. (Linhas 16 e 17)</p>
-<p>-Por fim, é necessário também configurar as linhas de conexão com a internet. Para isso, siga as instruções no código e insira o nome e a senha da sua rede Wi-Fi nas posições indicadas. Isso possibilitará que o ESP32 se conecte à rede e envie os dados para a nuvem.</p>
+<img src="https://github.com/limas0209/Global-Solution---2---Semestre/assets/127214958/6d1f74ad-0bd8-4c56-a8ee-60ec41c13b06">
+<p>-Em seguida é necessário definir os tópicos que enviarão as informações do paciente e do consultório para o servidor (Linhas 10 e 11)</p>
+
+<p>No void loop colocamos os seguintes códigos:</p>
+
+<div>
+  <img src="https://github.com/limas0209/Global-Solution---2---Semestre/assets/127214958/de40179f-95d6-426a-980e-3cce5fc1e344">
+</div>
+
+<p>Esse código vai permitir com que as informações do número do paciente e o número do consultório sejam enviadas para servidor, possibilitand ser vizualizada através do MQTT.</p>
+
+<br>
+
+<p>Depois disso seguimos os seguintes passos: </p>
+<div>
+  <img src="https://github.com/limas0209/Global-Solution---2---Semestre/assets/127214958/8a36c0b5-03cd-4249-a822-3d7ed6343eab">
+</div>
+
+<p>-Definimos o pino em que o LED e o BUZZER estão conectados (Linhas 14 e 16) </p>
+<p>-Criamos duas variasveis chamadas "pacientes" e "consultorio" e atribuimos o valor 0 e 4 respectivamente. (Linhas 18 e 19)</p>
+<p>-Por fim, é necessário também configurar as linhas de conexão com a internet. Para isso, siga as instruções no código e insira o nome e a senha da sua rede Wi-Fi nas posições indicadas. Isso possibilitará que o ESP32 se conecte à rede e envie os dados para a nuvem. (Linhas 22 e 23) </p>
 
 <br>
 
