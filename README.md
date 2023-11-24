@@ -64,7 +64,7 @@ prevenção e automação dessa área.</p>
   <img src="https://github.com/limas0209/Global-Solution---2---Semestre/assets/127214958/de40179f-95d6-426a-980e-3cce5fc1e344">
 </div>
 
-<p>Esse código vai permitir com que as informações do número do paciente e o número do consultório sejam enviadas para servidor, possibilitand ser vizualizada através do MQTT.</p>
+<p>Esse código vai permitir com que as informações do número do paciente e o número do consultório sejam enviadas para servidor, possibilitando ser vizualizada através do servidor IOT.</p>
 
 <br>
 
